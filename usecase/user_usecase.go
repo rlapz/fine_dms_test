@@ -1,23 +1,10 @@
 package usecase
 
 import (
-	"errors"
-
 	"enigmacamp.com/fine_dms/model"
 	"enigmacamp.com/fine_dms/repo"
 	"enigmacamp.com/fine_dms/utils"
 	"golang.org/x/crypto/bcrypt"
-)
-
-var (
-	ErrUsecaseEmptyEmail     = errors.New("`email` cannot be empty")
-	ErrUsecaseEmptyUsername  = errors.New("`username` cannot be empty")
-	ErrUsecaseEmptyPassword  = errors.New("`password` cannot be empty")
-	ErrUsecaseEmptyFname     = errors.New("`first_name` cannot be empty")
-	ErrUsecaseExistsUsername = errors.New("`username` already exists")
-	ErrUsecaseExistsEmail    = errors.New("`email` already exists")
-	ErrUsecaseInvalidEmail   = errors.New("`email` invalid format")
-	ErrUsecaseInvalidAuth    = errors.New("`username` or `password` wrong")
 )
 
 type user struct {

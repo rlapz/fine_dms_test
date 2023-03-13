@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"strings"
 
 	"github.com/joho/godotenv"
 )
@@ -22,4 +23,8 @@ func ValidateEmail(email string) bool {
 	}
 
 	return true
+}
+
+func StringContainsIgnoreCase(s, substr string) bool {
+	return strings.Contains(strings.ToLower(s), strings.ToLower(substr))
 }
