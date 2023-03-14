@@ -74,6 +74,7 @@ func (self *AppServer) v1() {
 	baseRg := self.engine.Group("/v1")
 	controller.NewUserController(baseRg, self.ucMgr.UserUsecase(), &self.secret)
 	controller.NewTagsController(baseRg, self.ucMgr.TagsUsecase())
+	controller.NewFileController(baseRg, self.ucMgr.FileUseCase(), &self.secret)
 }
 
 func (self *AppServer) waitSignal() {

@@ -7,6 +7,7 @@ import (
 type UsecaseManager interface {
 	UserUsecase() usecase.UserUsecase
 	TagsUsecase() usecase.TagsUsecase
+	FileUseCase() usecase.FileUsecase
 	// Add other usecase below
 }
 
@@ -26,4 +27,8 @@ func (self *usecaseManager) UserUsecase() usecase.UserUsecase {
 
 func (self *usecaseManager) TagsUsecase() usecase.TagsUsecase {
 	return usecase.NewTagsUsecase(self.repoMgr.TagsRepo())
+}
+
+func (self *usecaseManager) FileUseCase() usecase.FileUsecase {
+	return usecase.NewFileUsecase(self.repoMgr.FileRepo())
 }
